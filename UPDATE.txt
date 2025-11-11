@@ -19,10 +19,40 @@ Then, `script.js` reads this array and uses a `forEach()` loop to:
 3. Append each completed card into the container  
 
 
-### **What I have update this week**
+### **What I Have Updated This Week**
 
+1. **Dynamic Travel Destinations (index page)**
+   - Added a new section on the home page that displays 15 travel destinations.
+   - All destination data (name, description, rating, and image path) is now stored in a JavaScript array within `data.js`.
+   - Using `script.js`, the site loops through the array with `forEach()` to dynamically create and insert destination cards into the DOM.
+   - This approach replaces hardcoded HTML with data-driven generation, improving scalability and maintenance. 
 
-
+2. **AI + Map Integration (map page)**
+   - The map page now connects three key components:
+     - **OpenAI API**: Handles user input from the Chatbox and returns conversational responses.
+     - **Mapbox Geocoding API**: Extracts and validates real geographic locations from AI responses by converting place names into latitude and longitude.
+     - **Leaflet.js**: Displays the interactive map, adds location markers, and can draw routes between two detected places.
+   - When a user enters a message in the Chatbox:
+     1. The text is sent to OpenAI for interpretation.  
+     2. The system extracts possible place names from the AI response.  
+     3. Each candidate name is verified through Mapbox’s Geocoding API to ensure it corresponds to a real location.  
+     4. Verified locations are marked on the Leaflet map with pins and popups.  
+     5. If two valid locations are found, the system automatically calls Mapbox Directions API to display a route and travel time.
 
 ### **Challenges**
+    1. **GitHub Upload Issues**  
+       Initially, I was unable to push updates from my local VS Code to GitHub using Git, as the upload process kept hanging. To resolve this, I manually uploaded and modified files directly in the GitHub web interface to ensure that the online version visually matches the local version.
+    
+    2. **API Key Security**  
+       Since API keys cannot be exposed in a public repository, the OpenAI and Mapbox keys in the uploaded version have been revoked.  As a result, the Chatbox feature (which relies on these APIs) currently does not function in the public version.
+    
+    3. **AI API Stability and Accuracy**  
+       The OpenAI API sometimes returns unstable or delayed responses.  
+       Additionally, when users mention a city name that exists in multiple regions (for example, “Springfield” or “Paris”), the system may not always pinpoint the correct location.  
+       This happens because the Mapbox geocoding results are not geographically constrained.
+    
+    4. **Next Steps**  
+       To improve accuracy, I plan to add region-limited location retrieval — focusing first on the cities listed on the home page, so that AI queries and map visualizations stay within defined travel destinations.
+
+
 
