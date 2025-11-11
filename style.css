@@ -118,6 +118,7 @@ button {
   cursor: pointer;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1.5rem 0;
@@ -128,4 +129,85 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* Map container */
+#map {
+  height: 500px;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid var(--light-gray);
+}
+
+/* =========================================================
+   New Section: Travel Destinations
+   ========================================================= */
+
+#intro h2 {
+  color: var(--accent);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+#destinations {
+  margin-top: 3rem;
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+#destinations h2 {
+  color: var(--accent);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+#destinations-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  grid-auto-rows: auto;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  justify-items: center;
+}
+
+
+.destination-card {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.destination-card h3 {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin: 0.3rem 0;
+}
+
+.destination-card p {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.destination-card .rating {
+  display: inline-block;
+  font-weight: 600;
+  color: #ffb400;
 }
