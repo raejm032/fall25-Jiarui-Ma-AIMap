@@ -4,9 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Map Project | Map</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Leaflet + Mapbox -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  ></script>
+
+  <script defer src="./js/map.js"></script>
 </head>
+
 <body>
   <header>
     <nav class="navbar">
@@ -21,47 +33,34 @@
   </header>
 
   <main class="map-layout">
-    <!-- 左侧：ChatBox -->
+    <!-- Chatbox -->
     <section class="chatbox">
       <h3>AI Assistant</h3>
       <div id="chat-window">
-        <p><strong>AI:</strong> Hi! Where would you like to go today?</p>
+        <p><strong>AI:</strong> Hi! Ask me about any places or routes 🌍</p>
       </div>
-      <input type="text" id="userInput" placeholder="Type your destination..." />
+      <input type="text" id="userInput" placeholder="Type your question..." />
       <button id="sendBtn">Send</button>
     </section>
 
-    <!-- 右侧：地图（示例填充） -->
+    <!--  -->
     <section class="map-area">
       <div class="map-toolbar">
         <button class="tab-btn active" data-tab="overview">Overview</button>
-        <button class="tab-btn" data-tab="route">Route Plan</button>
-        <button class="tab-btn" data-tab="traffic">Traffic</button>
+        <button class="tab-btn" data-tab="route">Route</button>
       </div>
 
       <div id="overview" class="map-section active">
-        <h3>Map Overview</h3>
-        <p>Example map area (this could display a static sample map).</p>
-        <div class="map-sample">🗺️ [Static Map Placeholder]</div>
+        <div id="map"></div>
       </div>
 
       <div id="route" class="map-section">
         <h3>Suggested Route</h3>
-        <p>From: Central Park → To: Times Square</p>
-        <p>Duration: ~12 mins</p>
-        <div class="map-sample">🚗 Route visualization sample</div>
-      </div>
-
-      <div id="traffic" class="map-section">
-        <h3>Traffic Overview</h3>
-        <p>Current congestion: Moderate on 5th Avenue.</p>
-        <div class="map-sample">🚦 Traffic sample visualization</div>
+        <div class="map-sample" id="routeInfo">Route information will appear here.</div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 AI Map Project</p>
-  </footer>
+
 </body>
 </html>
